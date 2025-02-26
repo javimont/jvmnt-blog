@@ -1,5 +1,5 @@
-export const SITE_TITLE = "Sanju's Space";
-export const SITE_DESCRIPTION = "A internet space for Sanju.";
+export const SITE_TITLE = "JVMNT";
+export const SITE_DESCRIPTION = "Un rincón en el espacio.";
 
 export interface MenuItem {
 	label: string;
@@ -25,10 +25,10 @@ export const menuItems: MenuItem[] = [
 	},
 ];
 
-export const title = "Sanju's Space";
-export const description = "A internet space for Sanju.";
+export const title = "JVMNT";
+export const description = "Un rincón en el espacio.";
 export const image = "/images/ogimage.png";
-export const url = "https://sanju.sh";
+export const url = "https://www.netlify.jvmnt.com";
 
 export const ogImage = {
 	src: "/images/ogimage.png",
@@ -66,19 +66,19 @@ export const products = [
 
 export const socialLinks = [
 	{
-		label: "@x",
-		url: "https://x.com/spikeysanju",
+		label: "bluesky",
+		url: "https://bsky.jvmnt.com",
 	},
 	{
 		label: "email",
-		url: "mailto:work@sanju.sh",
+		url: "mailto:jmontero@gmail.com",
 	},
 	{
 		label: "github",
-		url: "https://github.com/spikeysanju",
+		url: "https://github.com/",
 	},
 	{
 		label: "linkedin",
-		url: "https://www.linkedin.com/in/imsanju",
+		url: "https://www.linkedin.com/",
 	},
 ];

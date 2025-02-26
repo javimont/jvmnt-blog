@@ -8,52 +8,52 @@
   }
 
   body {
-    font-family: 'UncutSans', sans-serif;
-    @apply bg-white text-black dark:bg-black dark:text-white;
+    font-family: 'Geist', sans-serif;
+    @apply bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
   }
 
 
   @font-face {
-    font-family: 'UncutSans';
+    font-family: 'Geist';
     src:
-      local('UncutSans'),
-      url('/fonts/uncut/woff2/UncutSans-Bold.woff2') format('woff2');
+      local('Geist'),
+      url('public/fonts/geist-variable.woff2') format('woff2');
     src:
-      local('UncutSans'),
-      url('/fonts/uncut/woff/UncutSans-Bold.woff') format('woff');
+      local('Geist'),
+      url('public/fonts/geist-variable.woff2') format('woff2');
     font-weight: 700;
   }
 
   @font-face {
-    font-family: 'UncutSans';
+    font-family: 'Geist';
     src:
-      local('UncutSans'),
-      url('/fonts/uncut/woff2/UncutSans-Semibold.woff2') format('woff2');
+      local('Geist'),
+      url('public/fonts/geist-variable.woff2') format('woff2');
     src:
-      local('UncutSans'),
-      url('/fonts/uncut/woff/UncutSans-Semibold.woff') format('woff');
+      local('Geist'),
+      url('public/fonts/geist-variable.woff2') format('woff2');
     font-weight: 600;
   }
 
   @font-face {
-    font-family: 'UncutSans';
+    font-family: 'Geist';
     src:
-      local('UncutSans'),
-      url('/fonts/uncut/woff2/UncutSans-Medium.woff2') format('woff2');
+      local('Geist'),
+      url('public/fonts/geist-variable.woff2') format('woff2');
     src:
-      local('UncutSans'),
-      url('/fonts/uncut/woff/UncutSans-Medium.woff') format('woff');
+      local('Geist'),
+      url('public/fonts/geist-variable.woff2') format('woff2');
     font-weight: 500;
   }
 
   @font-face {
-    font-family: 'UncutSans';
+    font-family: 'Geist';
     src:
-      local('UncutSans'),
-      url('/fonts/uncut/woff2/UncutSans-Regular.woff2') format('woff2');
+      local('Geist'),
+      url('public/fonts/geist-variable.woff2') format('woff2');
     src:
-      local('UncutSans'),
-      url('/fonts/uncut/woff/UncutSans-Regular.woff') format('woff');
+      local('Geist'),
+      url('public/fonts/geist-variable.woff2') format('woff2');
     font-weight: 400;
   }
 }

@@ -4,7 +4,7 @@ export default {
 	darkMode: 'class',
 	theme: {
 		fontFamily: {
-			uncut: ["UncutSans", "sans-serif"],
+			geist: ["Geist", "sans-serif"],
 		},
 		extend: {},
 	},

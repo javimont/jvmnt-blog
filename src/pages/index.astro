@@ -23,8 +23,8 @@ import RootLayout from '@layouts/root-layout.astro';
 			<Header />
 			<h1
 				class='w-full text-start text-[min(12vw,72px)] font-medium leading-[0.9] tracking-[-2px] sm:tracking-[-4px]'>
-				meet sanju
-				<span class='text-gray-500 dark:text-gray-400'>designer founder</span>
+				jvmnt's
+				<span class='text-gray-500 dark:text-gray-400'>blog</span>
 			</h1>
 
 			<div
@@ -40,26 +40,6 @@ import RootLayout from '@layouts/root-layout.astro';
 					wore many hats. Now I’m doing my own thing.
 				</div>
 
-				<div class='font-medium text-lg text-gray-700 dark:text-gray-300'>
-					I work on ideas like
-					<div class='flex flex-wrap gap-2 mt-5'>
-						{
-							products.map((product) => (
-								<a
-									href={product.url}
-									target='_blank'
-									class='p-2 rounded-full gap-2 flex-wrap hover:rotate-1 hover:scale-105 transition-all duration-300 flex items-center justify-center bg-gray-100 hover:bg-gray-200 dark:bg-[#1F1F1F] dark:hover:bg-[#2F2F2F]'>
-									<img
-										src={product.image}
-										alt={product.name}
-										class='size-9'
-									/>
-									<span class='mr-2'>{product.name}</span>
-								</a>
-							))
-						}
-					</div>
-				</div>
 
 				<div class='font-medium text-lg text-gray-700 dark:text-gray-400'>
 					I team up with founders and business owners. We build MVPs, full
