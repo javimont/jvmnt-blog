@@ -9,7 +9,7 @@
 
   body {
     font-family: 'Geist', sans-serif;
-    @apply bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+    @apply bg-lightBg text-gray-900 dark:bg-darkBg dark:text-gray-100;
   }
 
 

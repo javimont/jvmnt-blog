@@ -6,7 +6,12 @@ export default {
 		fontFamily: {
 			geist: ["Geist", "sans-serif"],
 		},
-		extend: {},
+		extend: {
+			colors: {
+				lightBg: '#f8f9fa', // Color de fondo para modo claro
+				darkBg: '#121212',  // Color de fondo para modo oscuro
+			}
+		},
 	},
 	plugins: [require("@tailwindcss/typography")],
 };
