@@ -8,8 +8,8 @@ export default {
 		},
 		extend: {
 			colors: {
-				lightBg: '#f8f9fa', // Color de fondo para modo claro
-				darkBg: '#121212',  // Color de fondo para modo oscuro
+				lightBg: '#f8f9fa', // Color bg claro
+				darkBg: '#121212',  // Color bg oscuro
 			}
 		},
 	},

@@ -18,24 +18,25 @@ export function clsx(...args: any[]): string {
 }
 
 // function that returns tailwindcss colors bg based on category for thoughts like, ai, design, product, engineering, productivity, etc
+// Cambiado como una colección de asuntos.
 export function getCategoryColor(category: string): string {
 	switch (category) {
-		case "ai":
+		case "podcast":
 			return "bg-yellow-300";
-		case "design":
+		case "libros":
 			return "bg-lime-300";
-		case "product":
+		case "media":
 			return "bg-green-300";
-		case "engineering":
+		case "estudios":
 			return "bg-purple-300";
-		case "productivity":
+		case "productos":
 			return "bg-pink-300";
-		case "learning":
-			return "bg-blue-300";
-		case "opensource":
-			return "bg-orange-400";
-		case "thoughts":
-		  return "bg-red-400";
+//		case "learning": Activar estos si es necesario
+//			return "bg-blue-300";
+//		case "opensource":
+//			return "bg-orange-400";
+//		case "thoughts":
+//		  return "bg-red-400";
 		default:
 			return "bg-gray-300";
 	}

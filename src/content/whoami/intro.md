@@ -4,11 +4,11 @@ description: "I run ThisUX, a design-led product studio. I'm working on ideas li
 pubDate: 'Sept 1 2024'
 ---
 
-I run [ThisUX](https://thisux.com), a design-led product studio. We make things that work.
+I run [ThisUX](https://thisux.com), a design-led product studio. We make things that work. Prueba 
 
 For years, I wore many hats. Now I'm doing my own thing.
 
-I'm working on ideas like:
+I'm working on ideas like: ksksksksks
 
 - [Dun](https://dunsuite.com)
 - [Fli](https://fli.so)

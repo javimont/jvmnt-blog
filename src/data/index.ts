@@ -12,11 +12,11 @@ export const menuItems: MenuItem[] = [
 		url: "/",
 	},
 	{
-		label: "writings",
+		label: "blog",
 		url: "/writings",
 	},
 	{
-		label: "thoughts",
+		label: "coleciones",
 		url: "/thoughts",
 	},
 	{
