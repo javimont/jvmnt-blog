@@ -31,7 +31,7 @@ const groupedShips = await groupShipsByYearMonthSorted();
 					Object.entries(groupedShips).map(([yearMonth, ships]) => {
 						const [year, month] = yearMonth.split('-');
 						const date = new Date(Number(year), Number(month) - 1);
-						const monthName = date.toLocaleString('default', { month: 'long' });
+						const monthName = date.toLocaleString('es-Es', { month: 'long' });
 						const shipCount = ships.length;
 						return (
 							<div class='col-span-10 mb-6'>
@@ -45,7 +45,7 @@ const groupedShips = await groupShipsByYearMonthSorted();
 									{ships.map((ship: Ship) => (
 										<ShipsItem
 											title={ship.data.title}
-											date={ship.data.pubDate.toLocaleDateString('en-US', {
+											date={ship.data.pubDate.toLocaleDateString('es-ES', {
 												year: 'numeric',
 												month: 'long',
 												day: 'numeric',
