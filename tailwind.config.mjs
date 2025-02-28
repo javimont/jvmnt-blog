@@ -1,3 +1,4 @@
+import colors from 'tailwindcss/colors'
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -8,8 +9,8 @@ export default {
 		},
 		extend: {
 			colors: {
-				lightBg: '#f8f9fa', // Color bg claro
-				darkBg: '#121212',  // Color bg oscuro
+				lightBg: colors.neutral[100], // Color bg claro
+				darkBg: colors.neutral[900],  // Color bg oscuro
 			}
 		},
 	},
