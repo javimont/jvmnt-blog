@@ -7,6 +7,6 @@ const { title, description, slug, ship_count } = Astro.props;
 <a href={`/ships/${slug}`}>
 	<!-- sronly h3 -->
 	<h3 class='sr-only'>{title}</h3>
-	<p class='sr-only'>{description} ships</p>
+	<p class='sr-only'>{description} bits</p>
 	<Dots ship_count={ship_count} />
 </a>
