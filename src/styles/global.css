@@ -15,17 +15,24 @@
 
   /* Enlaces salientes */
   a[target="_blank"] {
-    @apply text-blue-500 underline decoration-dotted transition-colors hover:text-blue-600 dark:text-amber-400 dark:hover:text-amber-300;
+    @apply text-blue-500 no-underline transition-colors hover:underline hover:text-blue-600 dark:hover:text-amber-300 relative pr-5 inline-flex items-center;
+  }
+  a[target="_blank"]::after {
+    content: "↗";
+    @apply ml-1 text-sm;
   }
   .prose a {
     all: unset;
-    @apply text-blue-500 underline decoration-dotted hover:text-blue-600;
+    @apply text-blue-500 no-underline hover:underline hover:text-blue-600 inline-flex items-center;
   }
   .prose a[target="_blank"] {
     all: unset;
-    @apply text-red-500 underline decoration-wavy hover:text-red-700;
+    @apply text-red-500 no-underline hover:underline hover:text-red-700 relative pr-5 inline-flex items-center;
   }
-
+  .prose a[target="_blank"]::after {
+    content: "↗";
+    @apply ml-1 text-sm;
+  }
   @font-face {
     font-family: 'geist-mono';
     src:
