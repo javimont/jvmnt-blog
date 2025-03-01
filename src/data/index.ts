@@ -40,7 +40,7 @@ export const ogImage = {
 export const socialLinks = [
 	{
 		label: "bluesky",
-		url: "https://bsky.jvmnt.com",
+		url: "https://bsky.app/profile/jvmnt.bsky.social",
 	},
 	{
 		label: "email",
@@ -48,10 +48,10 @@ export const socialLinks = [
 	},
 	{
 		label: "github",
-		url: "https://github.com/",
+		url: "https://github.com/javimont",
 	},
 	{
-		label: "linkedin",
-		url: "https://www.linkedin.com/",
+		label: "dribbble",
+		url: "https://dribbble.com/jvmnt",
 	},
 ];
