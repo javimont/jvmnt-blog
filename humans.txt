@@ -1,0 +1,21 @@
+/* humans.txt */  
+
+/* Autor del blog */  
+Nombre: Javier Montero
+Rol: Escritor
+Ubicación: España
+Contacto: jmontero@gmail.com
+Sitio web: 
+
+/* Sobre el blog */  
+Descripción: [Breve descripción de tu blog, por ejemplo: "Un espacio donde comparto ideas, experiencias y consejos sobre X"]  
+Inicio: 2025  
+Tecnología: Astro.build, Tailwindcss, Mdx.
+
+/* Créditos */  
+Diseño: Sanju  
+Desarrollador: Sanju.sh  
+Tipografía: Geist-mono  
+Inspiración: [Personas, blogs o fuentes de inspiración]  
+ 
+Gracias por leer.
