@@ -23,6 +23,10 @@ export const menuItems: MenuItem[] = [
 		label: "/bits",
 		url: "/ships",
 	},
+	{
+		label:"/now",
+		url: "/now",
+	}
 ];
 
 export const title = "JVMNT";
