@@ -14,10 +14,10 @@ const getIcon = () => {
 
 // Determinar el color de fondo según ship_count
 const getBgColor = () => {
-  if (ship_count === 0) return 'bg-gray-100';
-  if (ship_count <= 2) return 'bg-[#615EFC]';
-  if (ship_count <= 4) return 'bg-[#432DD8]';
-  return 'bg-[#312C85]';
+  if (ship_count === 0) return 'bg-green-500'; //verde-info
+  if (ship_count <= 2) return 'bg-red-500'; //rojo-link
+  if (ship_count <= 4) return 'bg-amber-400'; //amarillo-camara
+  return 'bg-fuchsia-500'; //símbolo extraño
 };
 
 const iconName = getIcon();
