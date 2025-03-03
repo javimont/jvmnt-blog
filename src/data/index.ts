@@ -8,19 +8,19 @@ export interface MenuItem {
 
 export const menuItems: MenuItem[] = [
 	{
-		label: "home",
+		label: "/home",
 		url: "/",
 	},
 	{
-		label: "blog",
+		label: "/blog",
 		url: "/writings",
 	},
 	{
-		label: "coleciones",
+		label: "/notas",
 		url: "/thoughts",
 	},
 	{
-		label: "bits",
+		label: "/bits",
 		url: "/ships",
 	},
 ];
