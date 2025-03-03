@@ -1,0 +1,40 @@
+---
+import RootLayout from '@layouts/root-layout.astro';
+import { BaseHead } from '@components/seo';
+import { Header } from '@components/misc';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<BaseHead title="Colophon" description="Detalles sobre la creación de este sitio web." />
+</head>
+<body>
+	<RootLayout>
+		<div class="max-w-xl mx-auto flex flex-col gap-6">
+			<Header />
+
+			<section class="max-w-xl mx-auto">
+				<h1 class='w-full text-7xl font-medium tracking-tight mb-6'>/colophon</h1>
+				<p class="text-md">
+					Este sitio web está construido con <a href="https://astro.build/" class="text-blue-500 underline">Astro</a> y desplegado en <a href="https://www.netlify.com/" class="text-blue-500 underline">Netlify</a>.
+					El diseño es minimalista, inspirado en la filosofía de <em>digital gardens</em>.
+				</p>
+				
+				<h2 class="text-2xl font-semibold mt-6">Tecnologías usadas</h2>
+				<ul class="list-disc pl-6">
+					<li>Framework: <a href="https://astro.build/" class="text-blue-500 underline">Astro</a></li>
+					<li>Despliegue: <a href="https://www.netlify.com/" class="text-blue-500 underline">Netlify</a></li>
+					<li>Estilos: Tailwind CSS</li>
+					<li>Fuente tipográfica: <a href="https://rsms.me/inter/" class="text-blue-500 underline">Inter</a></li>
+				</ul>
+
+				<h2 class="text-2xl font-semibold mt-6">Código fuente</h2>
+				<p class="text-md">
+					Puedes ver el código de este sitio en <a href="https://github.com/javimont" class="text-blue-500 underline">mi GitHub</a>.
+				</p>
+			</section>
+		</div>
+	</RootLayout>
+</body>
+</html>
