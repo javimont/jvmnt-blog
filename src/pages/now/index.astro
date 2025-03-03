@@ -28,39 +28,71 @@ function formatDate(date: Date) {
     .replace(',', '')
     .replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3.$2.$1');
 }
+
+// Agrupar entradas por mes
+const groupedEntries = renderedEntries.reduce((acc, entry) => {
+  const date = entry.data.pubDate;
+  const yearMonth = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+  
+  if (!acc[yearMonth]) {
+    acc[yearMonth] = [];
+  }
+  
+  acc[yearMonth].push(entry);
+  return acc;
+}, {});
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-	<BaseHead title="Now" description="Actualizaciones breves sobre mi día a día" />
-</head>
-<body>
+	<head>
+		<BaseHead title="Now" description="Actualizaciones breves sobre mi día a día" />
+	</head>
 	<RootLayout>
-		<div class="max-w-xl mx-auto flex flex-col gap-6">
+		<div
+			id="navbar+title"
+			class="flex flex-col w-full gap-6 max-w-xl">
 			<Header />
-
-			<section class="max-w-xl mx-auto">
-				<h1 class='w-full text-7xl font-medium tracking-tight mb-6'>/now</h1>
+			<h1 class="w-full text-7xl font-medium tracking-tight mb-6">/now</h1>
+			<div
+				id="grouped-entries"
+				class="grid grid-cols-10 gap-3">
 				{
-					renderedEntries.map(entry => {
-						const { Content } = entry;
+					Object.entries(groupedEntries).map(([yearMonth, entries]) => {
+						const [year, month] = yearMonth.split('-');
+						const date = new Date(Number(year), Number(month) - 1);
+						const monthName = date.toLocaleString('es-ES', { month: 'long' });
+						const entriesCount = entries.length;
 						return (
-							<article class="mb-6">
-								<h2 class="text-sm font-bold">{entry.data.title}</h2>
-								<p class="text-sm text-gray-500">
-									{formatDate(entry.data.pubDate)}
-								</p>
-								<div class="text-sm">
-									<Content />
+							<div class="col-span-10 mb-6">
+								<div class="flex flex-row items-center justify-between font-medium">
+									<h2 class="text-lg tracking-tight mb-6">
+										{monthName} {year}
+									</h2>
+									<span class="text-gray-500">{entriesCount} notas</span>
 								</div>
-								<hr class="mt-4 border-gray-300" />
-							</article>
+								<div class="grid grid-cols-10 gap-3">
+									{entries.map((entry) => {
+										const { Content } = entry;
+										return (
+											<article class="col-span-10 mb-6">
+												<h2 class="text-sm font-bold">{entry.data.title}</h2>
+												<p class="text-sm text-gray-500">
+													{formatDate(entry.data.pubDate)}
+												</p>
+												<div class="text-sm mt-2">
+													<Content />
+												</div>
+												<hr class="mt-4 border-gray-300" />
+											</article>
+										);
+									})}
+								</div>
+							</div>
 						);
 					})
 				}
-			</section>
+			</div>
 		</div>
 	</RootLayout>
-</body>
 </html>
