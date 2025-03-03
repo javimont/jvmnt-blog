@@ -1,40 +1,66 @@
 ---
-import { Header } from '@components/misc';
-import { BaseHead } from '@components/seo';
-import { SITE_DESCRIPTION, SITE_TITLE } from '@data/index';
-import { getCollection } from 'astro:content';
 import RootLayout from '@layouts/root-layout.astro';
+import { BaseHead } from '@components/seo';
+import { getCollection } from 'astro:content';
+import { Header } from '@components/misc';
 
-// Obtiene la colección "now"
-const nowItems = (await getCollection('now')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+// Obtener y ordenar las entradas
+const entries = await getCollection('now');
+entries.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Renderizar el contenido antes de la plantilla
+const renderedEntries = await Promise.all(
+	entries.map(async (entry) => {
+		const rendered = await entry.render(); // Se obtiene el contenido renderizado
+		return { ...entry, Content: rendered.Content };
+	})
 );
+
+// Función para formatear fecha
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('es-ES', {
+    weekday: 'long',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  })
+    .format(date)
+    .replace(',', '')
+    .replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3.$2.$1');
+}
 ---
 
-<!doctype html>
-<html lang='en'>
-	<head>
-		<BaseHead
-			title={`Now - ${SITE_TITLE}`}
-			description={SITE_DESCRIPTION}
-			image='/images/ogimage.png'
-		/>
-	</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<BaseHead title="Now" description="Actualizaciones breves sobre mi día a día" />
+</head>
+<body>
 	<RootLayout>
-		<div class='flex flex-col w-full gap-6 max-w-xl'>
+		<div class="max-w-xl mx-auto flex flex-col gap-6">
 			<Header />
-			<h1 class='w-full text-7xl font-medium tracking-tight'>/now</h1>
 
-			{nowItems.length === 0 ? (
-				<p>No hay actualizaciones por ahora.</p>
-			) : (
-				nowItems.map((item) => (
-					<a href={`/now/${item.slug}`} class='block p-4 border-b'>
-						<h2 class='text-xl font-semibold'>{item.data.title}</h2>
-						<p class='text-gray-500'>{item.data.description}</p>
-					</a>
-				))
-			)}
+			<section class="max-w-xl mx-auto">
+				<h1 class="text-5xl font-bold mb-6">/now</h1>
+				{
+					renderedEntries.map(entry => {
+						const { Content } = entry;
+						return (
+							<article class="mb-6">
+								<h2 class="text-lg font-semibold">{entry.data.title}</h2>
+								<p class="text-sm text-gray-500">
+									{formatDate(entry.data.pubDate)}
+								</p>
+								<div class="prose mt-2">
+									<Content />
+								</div>
+								<hr class="mt-4 border-gray-300" />
+							</article>
+						);
+					})
+				}
+			</section>
 		</div>
 	</RootLayout>
+</body>
 </html>
