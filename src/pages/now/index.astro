@@ -47,11 +47,11 @@ function formatDate(date: Date) {
 						const { Content } = entry;
 						return (
 							<article class="mb-6">
-								<h2 class="text-lg font-semibold">{entry.data.title}</h2>
+								<h2 class="text-sm font-bold">{entry.data.title}</h2>
 								<p class="text-sm text-gray-500">
 									{formatDate(entry.data.pubDate)}
 								</p>
-								<div class="prose mt-2">
+								<div class="text-sm">
 									<Content />
 								</div>
 								<hr class="mt-4 border-gray-300" />
