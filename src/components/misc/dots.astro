@@ -1,15 +1,38 @@
 ---
 import { clsx } from "@utils/index";
+import { Icon } from 'astro-icon/components';
 
 const { ship_count } = Astro.props;
+
+// Determinar qué icono mostrar según ship_count
+const getIcon = () => {
+  if (ship_count === 0) return "info-circle";
+  if (ship_count <= 2) return "link";
+  if (ship_count <= 4) return "camera";
+  return "world-latitude";
+};
+
+// Determinar el color de fondo según ship_count
+const getBgColor = () => {
+  if (ship_count === 0) return 'bg-gray-100';
+  if (ship_count <= 2) return 'bg-[#615EFC]';
+  if (ship_count <= 4) return 'bg-[#432DD8]';
+  return 'bg-[#312C85]';
+};
+
+const iconName = getIcon();
+const bgColor = getBgColor();
+const iconColor = ship_count === 0 ? "#4A5568" : "white";
 ---
 
 <div
-	class={clsx(
-		'size-9 mb-4 rounded-full',
-		ship_count === 0 && 'bg-gray-100',
-		ship_count <= 2 && 'bg-[#615EFC]',
-		ship_count > 2 && ship_count <= 4 && 'bg-[#432DD8]',
-		ship_count > 4 && 'bg-[#312C85]'
-	)}>
+  class={clsx(
+    'size-9 mb-4 rounded-full flex items-center justify-center',
+    bgColor
+  )}
+>
+  {iconName === "info-circle" && <Icon name="tabler:info-circle" size={20} color={iconColor} />}
+  {iconName === "link" && <Icon name="tabler:link" size={20} color={iconColor} />}
+  {iconName === "camera" && <Icon name="tabler:camera" size={20} color={iconColor} />}
+  {iconName === "world-latitude" && <Icon name="tabler:world-latitude" size={20} color={iconColor} />}
 </div>
