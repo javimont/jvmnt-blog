@@ -56,5 +56,17 @@ const ship = defineCollection({
 		readingTime: z.number().optional(),
 	}),
 });
+//Colección de now
+const now = defineCollection({
+	type: "content",
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		// Transform string to Date object
+		pubDate: z.coerce.date(),
+		updatedDate: z.coerce.date().optional(),
+	}),
+});
+export const collections = { writing, thought, ship, whoami, now
 
-export const collections = { writing, thought, ship, whoami };
+ };
