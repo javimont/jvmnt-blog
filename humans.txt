@@ -16,6 +16,4 @@ Tecnología: Astro.build, Tailwindcss, Mdx.
 Diseño: Sanju  
 Desarrollador: Sanju.sh  
 Tipografía: Geist-mono  
-Inspiración: [Personas, blogs o fuentes de inspiración]  
  
-Gracias por leer.
