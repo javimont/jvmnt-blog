@@ -37,17 +37,8 @@ const { title, description, pubDate, readingTime } = Astro.props;
 					<p class='text-start text-gray-500 font-medium'>
 						<FormattedDate date={pubDate.toString()} />
 					</p>
-					<span class='text-gray-500 font-medium'>·</span>
-					<p class='text-start text-gray-500 font-medium'>
-						{readingTime} min read
-					</p>
+					
 				</div>
-				<p
-					class='w-full text-start font-medium text-gray-700 dark:text-gray-300 text-lg'>
-					<span class='font-bold'>tl;dr: </span>
-					{description}
-				</p>
-
 				<div
 					class={clsx(
 						'w-full prose prose-lg my-3 prose-p:font-medium prose-p:tracking-tight dark:prose-invert items-center justify-center',
